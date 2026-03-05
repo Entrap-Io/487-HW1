@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dressCode">#F65952</color>
+    <color name="dressCodeCaption">#F67D73</color>
 </resources>

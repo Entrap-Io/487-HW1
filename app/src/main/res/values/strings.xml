@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MohammedEhsanUllahShareef_HW1</string>
+    <string name="dressCode">Dress Code</string>
+    <string name="dressCodeCaption">Outfit of the day!</string>
 </resources>
