@@ -2,4 +2,15 @@
     <string name="app_name">MohammedEhsanUllahShareef_HW1</string>
     <string name="dressCode">Dress Code</string>
     <string name="dressCodeCaption">Outfit of the day!</string>
+    <string name="selBtn">Select</string>
+
+
+    <string-array name="entries">
+        <item>Add Items</item>
+        <item>My Closet</item>
+        <item>Outfit AI</item>
+
+    </string-array>
+
+
 </resources>
