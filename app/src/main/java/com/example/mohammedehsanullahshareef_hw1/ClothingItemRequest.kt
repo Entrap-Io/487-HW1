@@ -1,10 +1,10 @@
 package com.example.mohammedehsanullahshareef_hw1
 
 data class ClothingItemRequest(
-    val category: String,           // "top", "bottom", etc.
-    val subcategory: String?,       // "t-shirt", "jeans", ...
+    val category: String,
+    val subcategory: String?,
     val primaryColor: String,
-    val secondaryColor: String?,    // or null
+    val secondaryColor: String?,
     val pattern: String,
     val material: String?,
     val style: String,

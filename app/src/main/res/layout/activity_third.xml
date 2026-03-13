@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirdActivity">
+    android:orientation="vertical"
+    android:background="@color/surface">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_m"
+        android:background="@color/surface">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wardrobe_title"
+            android:textColor="@color/dressCode"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:paddingBottom="@dimen/spacing_m" />
+
+        <!-- Category filter Spinner -->
+        <Spinner
+            android:id="@+id/categorySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/surface_variant"
+            android:layout_marginBottom="@dimen/spacing_s" />
+
+        <!-- Opacity SeekBar -->
+        <TextView
+            android:id="@+id/opacityLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Opacity: 100%"
+            android:textColor="@color/on_surface"
+            android:textSize="@dimen/text_body"
+            android:paddingBottom="@dimen/spacing_xs" />
+
+        <SeekBar
+            android:id="@+id/opacitySeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100"
+            android:progressTint="@color/dressCode"
+            android:thumbTint="@color/dressCode"
+            android:layout_marginBottom="@dimen/spacing_s" />
+
+        <!-- Item count -->
+        <TextView
+            android:id="@+id/itemCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dressCodeCaption"
+            android:textSize="12sp"
+            android:paddingBottom="@dimen/spacing_xs" />
+
+    </LinearLayout>
+
+    <!-- Empty state -->
+    <TextView
+        android:id="@+id/emptyState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/empty_closet"
+        android:textColor="@color/dressCodeCaption"
+        android:textAlignment="center"
+        android:padding="@dimen/spacing_xl"
+        android:visibility="gone" />
+
+    <!-- Clothes grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wardrobeRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/spacing_s"
+        android:clipToPadding="false" />
+
+    <!-- Done button — returns stats to SecondActivity -->
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="Done"
+        android:backgroundTint="@color/dressCode"
+        android:textColor="@color/white"
+        android:layout_margin="@dimen/spacing_m" />
+
+</LinearLayout>

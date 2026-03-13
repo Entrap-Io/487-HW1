@@ -1,10 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FourthActivity">
+    android:orientation="vertical"
+    android:background="@color/surface"
+    android:padding="@dimen/spacing_m">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/outfit_title"
+        android:textColor="@color/dressCode"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingVertical="@dimen/spacing_m" />
+
+    <!-- Query input -->
+    <EditText
+        android:id="@+id/queryInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. smart casual Friday dinner"
+        android:textColor="@color/on_surface"
+        android:textColorHint="@color/dressCodeCaption"
+        android:background="@color/surface_variant"
+        android:padding="@dimen/spacing_m"
+        android:inputType="text"
+        android:layout_marginBottom="@dimen/spacing_m" />
+
+    <Button
+        android:id="@+id/generateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/generate_btn"
+        android:backgroundTint="@color/dressCode"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/spacing_m" />
+
+    <!-- Loading state -->
+    <LinearLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/spacing_m">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="@dimen/spacing_s" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generating"
+            android:textColor="@color/on_surface"
+            android:textSize="@dimen/text_body" />
+
+    </LinearLayout>
+
+    <!-- Result card -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/outfitResultName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dressCode"
+                android:textSize="@dimen/text_subtitle"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/spacing_s" />
+
+            <TextView
+                android:id="@+id/outfitResultReasoning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/on_surface"
+                android:textSize="@dimen/text_body"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/spacing_m" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/outfitItemsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Send to Home button -->
+    <Button
+        android:id="@+id/sendToHomeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="Set as Outfit of the Day"
+        android:backgroundTint="@color/success"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/spacing_m" />
+
+</LinearLayout>

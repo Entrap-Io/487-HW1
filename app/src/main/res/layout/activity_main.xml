@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="@color/surface"
+    android:padding="@dimen/spacing_m">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+    <Space android:layout_width="match_parent" android:layout_height="@dimen/spacing_l" />
 
+    <!-- Blinking title -->
     <TextView
         android:id="@+id/dressCode"
         android:layout_width="match_parent"
@@ -25,8 +23,8 @@
 
     <TextView
         android:id="@+id/dressCodeCaption"
-        android:layout_width="411dp"
-        android:layout_height="39dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:paddingVertical="@dimen/caption_vertical_padding"
         android:text="@string/dressCodeCaption"
         android:textAlignment="center"
@@ -34,101 +32,97 @@
         android:textSize="@dimen/text_subtitle"
         android:textStyle="bold" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+    <Space android:layout_width="match_parent" android:layout_height="@dimen/spacing_l" />
 
-    <TableLayout
+    <!-- Outfit of the day card -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="272dp">
+        android:layout_height="wrap_content"
+        android:text="Today's Outfit"
+        android:textColor="@color/on_surface"
+        android:textSize="@dimen/text_subtitle"
+        android:textStyle="bold"
+        android:paddingBottom="@dimen/spacing_s" />
 
-        <TableRow
+    <androidx.cardview.widget.CardView
+        android:id="@+id/outfitCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/surface_variant"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="4dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/height">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_m">
 
-            <ImageView
-                android:id="@+id/outerwear"
-                android:layout_width="136dp"
-                android:layout_height="@dimen/height" />
+            <TextView
+                android:id="@+id/outfitName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_outfit_yet"
+                android:textColor="@color/on_surface"
+                android:textSize="@dimen/text_body"
+                android:textAlignment="center"
+                android:minHeight="60dp"
+                android:gravity="center" />
 
-            <ImageView
-                android:id="@+id/top"
-                android:layout_width="136dp"
-                android:layout_height="@dimen/height" />
+            <TextView
+                android:id="@+id/outfitReasoning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dressCodeCaption"
+                android:textSize="12sp"
+                android:paddingTop="@dimen/spacing_s"
+                android:visibility="gone" />
 
-            <ImageView
-                android:id="@+id/dresses"
-                android:layout_width="136dp"
-                android:layout_height="@dimen/height" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        </TableRow>
+    <Space android:layout_width="match_parent" android:layout_height="@dimen/spacing_l" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height">
-
-            <ImageView
-                android:id="@+id/shoes"
-                android:layout_width="@dimen/height"
-                android:layout_height="@dimen/height" />
-
-            <ImageView
-                android:id="@+id/bottom"
-                android:layout_width="@dimen/height"
-                android:layout_height="@dimen/height" />
-
-            <ImageView
-                android:id="@+id/accessories"
-                android:layout_width="@dimen/height"
-                android:layout_height="@dimen/height" />
-
-        </TableRow>
-
-    </TableLayout>
-
-    <Space
+    <!-- Navigation spinner -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
-    <SeekBar
-        android:id="@+id/rateBar"
-        android:layout_width="match_parent"
-        android:layout_height="64dp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+        android:layout_height="wrap_content"
+        android:text="Navigate to"
+        android:textColor="@color/on_surface"
+        android:textSize="@dimen/text_body"
+        android:paddingBottom="@dimen/spacing_s" />
 
     <Spinner
         android:id="@+id/mainMenu"
         android:layout_width="match_parent"
-        android:layout_height="82dp" />
+        android:layout_height="52dp"
+        android:background="@color/surface_variant"
+        android:popupBackground="@color/surface_variant" />
+
+    <Space android:layout_width="match_parent" android:layout_height="@dimen/spacing_m" />
+
+    <Button
+        android:id="@+id/selBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/selBtn"
+        android:backgroundTint="@color/dressCode"
+        android:textColor="@color/white" />
 
     <Space
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <LinearLayout
+    <!-- Bottom outfit items preview -->
+    <TextView
+        android:id="@+id/outfitItemsLabel"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/selBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/selBtn" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:textColor="@color/dressCodeCaption"
+        android:textSize="12sp"
+        android:paddingBottom="@dimen/spacing_s"
+        android:visibility="gone" />
 
 </LinearLayout>

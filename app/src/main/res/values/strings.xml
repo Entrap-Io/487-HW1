@@ -3,14 +3,46 @@
     <string name="dressCode">Dress Code</string>
     <string name="dressCodeCaption">Outfit of the day!</string>
     <string name="selBtn">Select</string>
-
+    <string name="no_outfit_yet">Generate an outfit to see it here</string>
+    <string name="upload_hint">Tap to take a photo or choose from gallery</string>
+    <string name="rating_label">Rating: %1$d / 10</string>
+    <string name="analyze_btn">Add to Closet</string>
+    <string name="generating">Generating outfit…</string>
+    <string name="generate_btn">Generate Outfit</string>
+    <string name="wardrobe_title">My Closet</string>
+    <string name="upload_title">Add Item</string>
+    <string name="outfit_title">Outfit AI</string>
+    <string name="category_avg">%1$s avg rating: %.1f</string>
+    <string name="empty_closet">Your closet is empty. Add some items!</string>
+    <string name="confirm_generate">Ready to generate your outfit?</string>
+    <string name="confirm_generate_msg">This will use your wardrobe to suggest a complete outfit.</string>
+    <string name="delete_confirm">Remove this item from your closet?</string>
 
     <string-array name="entries">
         <item>Add Items</item>
         <item>My Closet</item>
         <item>Outfit AI</item>
-
     </string-array>
 
+    <string-array name="categories">
+        <item>all</item>
+        <item>top</item>
+        <item>bottom</item>
+        <item>shoes</item>
+        <item>outerwear</item>
+        <item>dress</item>
+        <item>accessory</item>
+        <item>suit</item>
+    </string-array>
 
+    <string-array name="category_labels">
+        <item>All</item>
+        <item>Tops</item>
+        <item>Bottoms</item>
+        <item>Shoes</item>
+        <item>Outerwear</item>
+        <item>Dresses</item>
+        <item>Accessories</item>
+        <item>Suits</item>
+    </string-array>
 </resources>
